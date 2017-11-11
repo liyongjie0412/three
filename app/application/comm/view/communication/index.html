@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="__ROOT__/public/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="__ROOT__/public/css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="__ROOT__/public/css/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" type="text/css" href="__ROOT__/public/css/home.css" />
+    <style type="text/css">
+        a{
+            color: black;
+            text-decoration: none;
+            -webkit-tap-highlight-color: white;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+        html{
+            font-size: 16px;
+        }
+        body{
+            background: white;
+        }
+        #lunbo{
+            width: 100%;
+            height: 200px;
+            background: deepskyblue;
+        }
+        .nav{
+            margin-top: 30vh;
+            width: 100%;
+            padding: 20px 2% 0px;
+            background: white;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .nav a{
+            display: block;
+            width: 22%;
+            -webkit-tap-highlight-color: white;
+        }
+        .nav div{
+            width: 100%;
+        }
+        .nav div img{
+            width: 60%;
+            margin-left: 20%;
+            border-radius: 50%;
+        }
+        .nav div p{
+            text-align: center;
+            line-height: 2rem;
+            font-size: 0.8rem;
+            color: grey;
+        }
+        .contain{
+            margin-bottom: 0px;
+            width: 100%;
+            background: #aba2a2;
+            box-sizing: border-box;
+            padding-top: 4px;
+            justify-content: space-between;
+        }
+
+        #main .swiper-container {
+            width: 100vw;
+            height: auto;
+            position: absolute;
+        }
+        .img_show{
+            padding: 1rem 0 ;
+            margin: 0;
+            width: 100%;
+            background: white;
+            position: relative;
+            margin-bottom: 0.25rem;
+        }
+        .img_show img{
+            position: absolute;
+            right: 5%;
+            bottom: 5px;
+        }
+        .img_show h3{
+            font-size: 1.5rem;
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .img_show p{
+            margin-left: 5%;
+            width: 50%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .contain_box{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .contain_box>a{
+            display: block;
+            height: 49vw;
+            box-sizing: border-box;
+            margin-bottom: 4px;
+            background: white;
+            width: 49.5%;
+        }
+        .contain_box>a>div{
+            border: 1px solid #f1f1f1 ;
+            width: 35vw;
+            height: 35vw;
+            height: ;
+            margin: 0.3125rem auto 0;
+        }
+        .contain_box>a>div img{
+            width: 70%;
+            margin-left: 15%;
+            margin-top: 5%;
+        }
+        .contain_box>a>p{
+            font-size: 0.6rem;
+            width: 80%;
+            margin-left: 10%;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <!--<div class="hLeft">
+        <i class="iconfont icon-return"></i>
+    </div>
+    <div class="hCenter">
+        <div class="bac">
+            <i class="iconfont icon-sousuo searchfont"></i><input type="text" placeholder="输入关键字在本店搜索" />
+        </div>
+    </div>
+    <div class="hright">
+        <i class="iconfont icon-switch"></i>
+    </div>-->
+</div>
+<div id="main">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="__ROOT__/public/images/nav_li_01.png" />
+            </div>
+            <div class="swiper-slide">
+                <img src="__ROOT__/public/images/nav_li_01.png" />
+            </div>
+            <div class="swiper-slide">
+                <img src="__ROOT__/public/images/nav_li_01.png" />
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div class="nav">
+    <a href="shoppingInfo2.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_04.png" />
+            <p>免费互打</p>
+        </div>
+    </a>
+    <a href="shoppingInfo2.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_06.png" />
+            <p>集团套餐</p>
+        </div>
+    </a>
+    <a href="newPhone.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_08.png" />
+            <p>新品手机</p>
+        </div>
+    </a>
+    <a href="phoneAccessories.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_11.png" />
+            <p>手机配件</p>
+        </div>
+    </a>
+    <a href="cardNumber.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_18.png" />
+            <p>号卡\套餐</p>
+        </div>
+    </a>
+    <a href="newPhone.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_20.png" />
+            <p>宽带报装</p>
+        </div>
+    </a>
+    <a href="newPhone.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_22.png" />
+            <p>天才手表</p>
+        </div>
+    </a>
+    <a href="newPhone.html">
+        <div>
+            <img src="__ROOT__/public/images/nav_li_24.png" />
+            <p>优品3c</p>
+        </div>
+    </a>
+</div>
+<div class="contain">
+    <div class="img_show">
+        <h3>热销产品</h3>
+        <p>VIVO Xplay6</p>
+        <p>曲屏:双摄柔光更美</p>
+        <img src="__ROOT__/public/images/nav_li_31.png" />
+    </div>
+    <div class="contain_box">
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+        <a href="shoppingInfo2.html">
+            <div>
+                <img src="__ROOT__/public/images/fill in on order (3)_1.png" />
+            </div>
+            <p>oppo 89s Plus 64G内存版</p>
+            <p>全网通4G手机 双卡双待</p>
+        </a>
+    </div>
+</div>
+</body>
+<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+</html>
