@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ShoppingChoose</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				color: #a9a9a9;
+			}
+			a{
+				-webkit-tap-highlight-color: white;
+			}
+			#header{
+				width: 100%;
+				height: 200px;
+				background: url(images/name.gif);
+				background-size: 100%;
+				opacity: 0.6;
+				position: fixed;
+				top: 0;
+				z-index: -1;
+			}
+			#main{
+				margin-top: 150px;
+				width: 100%;
+				background: white;
+				margin-bottom: 50px;
+			}
+			#posi{
+				position: relative;
+				font-size: 14px;
+				height: 95px;
+			}
+			#posi p{
+				padding: 2px;
+			}
+			#iphone{
+				position: absolute;
+				background: white;
+				border: 1px solid #bab5bf;
+				border-radius: 6px;
+				padding: 3px;
+				top: -23px;
+				left: 2%;
+				width: 90px;
+			}
+			#money{
+				position: absolute;
+				left: 32%;
+			}
+			a{
+				text-decoration: none;
+			}
+			#delete{
+				position: absolute;
+				right: 2%;
+				top: 20px;
+				width: 26px;
+			}
+			#inter p{
+				padding-left: 10px;
+				padding-top: 8px;
+				padding-bottom: 10px;
+			}
+			#inter p a{
+				border: 1px solid #bab5bf;
+				padding: 6px 6px;
+				text-decoration: none;
+				border-radius: 6px;
+			}
+			#inter p a:hover{
+				border: 1px solid red;
+			}
+			#ofcouse{
+				position: fixed;
+				bottom: 0;
+				display: block;
+				width: 100%;
+				text-align: center;
+				background: #ff6801;
+				color: white;
+				padding: 10px 0;
+				height: 60px;
+				box-sizing: border-box;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+		</div>
+		<div id="main">
+			<div id="posi">
+				<img src="images/ShoppingChoose_03.gif" id="iphone"/>
+				<div id="money">
+					<p style="color: #ff6408;margin-top: 5px;">￥3558.00</p>
+					<p>库存:271件</p>
+					<p>请选择规格</p>
+				</div>
+				<img src="images/ShoppingChoose_06.gif" id="delete"/>
+			</div>
+			<div id="inter">
+				<p style="padding-top: 0;">网络类型</p>
+				<p style="padding-top: 20px;"><a href="#">无需合约版</a></p>
+				<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+				<p style="">机身颜色</p>
+				<p style="padding-top: 20px;">
+					<a href="#">玫瑰金色</a>
+					<a href="#">金色</a>
+					<a href="#">深空灰色</a>
+					<a href="#">磨砂黑</a>
+				</p>
+				<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+				<p>套餐类型</p>
+				<p style="padding-top: 20px;"><a href="#">官方标配</a></p>
+				<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+				<p>存储容量</p>
+				<p style="padding-top: 20px;">
+					<a href="#">16GB</a>
+					<a href="#">32GB</a>
+					<a href="#">128GB</a>
+				</p>
+			</div>
+		</div>
+		<a href="shoppingInfo.html" id="ofcouse">确认</a>
+	</body>
+</html>

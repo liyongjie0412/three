@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			a{
+				text-decoration: none;
+				-webkit-tap-highlight-color: white;
+			}
+			body{
+				background: #f2f3f5;
+				margin: 0 auto;
+				 display: flex;
+	            width: 100%;
+	            height: 100%;
+	            box-orient:vertical;
+	            flex-direction:column;
+			}
+			#header{
+				width: 100%;
+				height: 1rem;
+				position: fixed;
+				top: 0;
+				text-align: center;
+				border-bottom: 0.05rem solid #cbcbc9;
+				background: white;
+			}
+			#main{
+				box-sizing: border-box;
+				flex:1;
+				width: 100%;
+				margin-top: 0rem;
+				background: white;
+				/*height: 320px;*/
+				padding: 5px 0;
+				font-size: 0.8rem;
+				border-bottom: 1px solid #D7D7D7;
+			}
+			img{
+				width: 100%;
+    			height: 100%;
+				border: 0.05rem solid #d7d7d7;
+				border-radius: 0.15rem;
+				max-width: 100%;
+    			max-height: 100%;
+			}
+			#img {
+			    width: 50px;
+			    height: 50px;
+			    border: 1px solid #000;
+			    margin-left: 10px;
+			 }
+			#main p{
+				margin-top: 0px;
+			}
+			#main dl{
+				/*height: 120px;*/
+				padding: 10px 0;
+			}
+			#main2{
+				flex:1;
+				width: 100%;
+				background: white;
+				height: 420px;
+				font-size: 0.8rem;
+				border-bottom: 1px solid #D7D7D7;
+			}
+			#main2 p{
+				margin-top: 0px;
+			}
+			#main2 dl{
+				/*height: 120px;*/
+				padding: 10px 0;
+				margin: 0;
+			}
+			#main3{
+				box-sizing: border-box;
+				width: 100%;
+				height: 50px;
+				border: 1px solid #D7D7D7;
+				background: white;
+			}
+			footer{
+				height: 40px;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				position: fixed;
+				bottom: 0px;
+				border-top: 1px solid #ccc;
+				padding: 10px 0;
+				box-shadow: 0px -2px 20px #ccc;
+				background: white;
+			}
+			footer a{
+				display: block;
+				width: 25%;
+			}
+			footer a img{
+				width: 30%;
+				margin-left: 35%;
+				margin-bottom: -5px;
+				border: none;
+			}
+			footer a p{
+				margin-top: 0;
+				color: grey;
+				text-align: center;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="box">
+			<div id="main">
+			<p style="line-height: 54px;"><span style="font-size: 0.6rem; border: 1px solid red; margin-left: 10px; border-radius: 3px; color: red;">加价购</span><span style="margin-left: 10px;">已购满20.00元,可加39.90元换购商品</span></p>
+			<dl>
+				<dt style="float: left;"><img src="images/images/购物车_03.gif" style="float: left; border: 0; width: 40px; height: 40px; margin-top: 20px; margin-left: 0px;"/><img src="images/shopping car_1.png" style=" margin-right:10px;width: 90px; height: 90px;"/></dt>
+				<dd><span>小米（MI）路由器3 1200M千兆5G双频<br/><span>四天线无线路由 智能wiFi稳定穿墙...</span></span></dd>
+				<dd style="color: #82828c;"><span style="font-size: 0.7rem;">重量:0.51kg 颜色:【1200M】小米...</span><span style="margin-left: 0px;font-size: 0.7rem;">选服务</span></dd>
+				<dd style="margin-top: 10px;"><span style="color: #de463b; font-size: 1.2rem;" >￥139.00</span><span style="margin-left: 40px;"><button style="border: 1px solid #D7D7D7; background: white; width: 30px; height: 30px; font-size: 15px;" class="jian">-</button><button style="border: 0.05rem solid #D7D7D7; font-size: 15px; background: white; width: 40px; height: 30px;" class="val">1</button><button style="border: 1px solid #D7D7D7; font-size: 15px; background: white; width: 30px; height: 30px;" class="add">+</button></span></span></dd>
+				<dd style="clear: both;"></dd>
+			</dl>
+			</p>
+			<dl>
+				<dt style="float: left;"><img src="images/images/购物车_03.gif" style="float: left; border: 0; width: 40px; height: 40px; margin-top: 20px; margin-left: 0px;"/><img src="images/shopping-cart_03.png" style="margin-right:10px;width: 90px; height: 90px;"/></dt>
+				<dd><span>TP-LINK TL_WDR5620 1200M 11AC<br/><span>智能双频无线路由器 信号放大 WIFI...</span></span></dd>
+				<dd style="color: #82828c;"><span style="font-size: 0.7rem;">重量:0.685kg 颜色:【四线双频】...</span><span style="margin-left: 0px;font-size: 0.7rem;">选服务</span></dd>
+				<dd style="margin-top: 10px;"><span style="color: #de463b; font-size: 1.2rem; " >￥149.00</span><span style="margin-left: 40px;"><button style="border: 1px solid #D7D7D7; background: white; width: 30px; height: 30px; font-size: 15px;" class="jian">-</button><button style="border: 0.05rem solid #D7D7D7; font-size: 15px; background: white; width: 40px; height: 30px;" class="val">1</button><button style="border: 1px solid #D7D7D7; font-size: 15px; background: white; width: 30px; height: 30px;" class="add">+</button></span></span></dd>
+				<dd style="clear: both;"></dd>
+			</dl>
+			</p>
+		</div>
+	</div>	
+		<div id="main2">
+			<p style="line-height: 54px;"><span style="color: red; padding: 10px;">[满减]</span>最贵5件购满49.90元，即享优惠</p>
+			<dl>
+				<dt style="float: left;"><img src="images/images/购物车_03.gif" style="float: left; border: 0; width: 40px; height: 40px; margin-top: 20px; margin-left: 0px;"/><img src="images/shopping-cart_06.png" style="width: 90px; height: 90px;"/></dt>
+				<dd><span>【京东超市】乐事（Lay's）香蔬一刻<br/><span>休闲零食 酸奶黄瓜味45g（新老包装...</span></span></dd>
+				<dd style="color: #82828c;"><span style="font-size: 0.7rem; ">重量:0.08kg</span><span style="margin-left: 0px;font-size: 0.7rem;">选服务</span></dd>
+				<dd style="margin-top: 10px;"><span style="color: #de463b; font-size: 1.2rem;" >￥5.80</span><span style="margin-left: 60px;"><button style="border: 1px solid #D7D7D7; background: white; width: 30px; height: 30px; font-size: 15px;" class="jian">-</button><button style="border: 0.05rem solid #D7D7D7; font-size: 15px; background: white; width: 40px; height: 30px;" class="val">1</button><button style="border: 1px solid #D7D7D7; font-size: 15px; background: white; width: 30px; height: 30px;" class="add">+</button></span></span></dd>
+			</dl>
+			<div style="background: #fff9f9; width: 100%; line-height: 40px;"><span style="padding-left:40px;">促销 49.90买5件</span> <span style="float: right;padding-right: 20px;">修改</span></div>
+			</p>
+			<p style="line-height: 54px;"><span style="font-size: 0.6rem; border: 1px solid red; margin-left: 10px; border-radius: 3px; color: red;">加价购</span><span style="margin-left: 10px;">已购满20.00元,可加39.90元换购商品</span></p>
+			<dl>
+				<dt style="float: left;"><img src="images/images/购物车_03.gif" style="float: left; border: 0; width: 40px; height: 40px; margin-top: 20px; margin-left: 0px;"/><img src="images/mylist (3)_1.png" style=" margin-right:10px;width: 90px; height: 90px;"/></dt>
+				<dd><span>小米（MI）路由器3 1200M千兆5G双频<br/><span>四天线无线路由 智能wiFi稳定穿墙...</span></span></dd>
+				<dd style="color: #82828c;"><span style="font-size: 0.7rem;">重量:0.51kg 颜色:【1200M】小米...</span><span style="margin-left: 0px;font-size: 0.7rem;">选服务</span></dd>
+				<dd style="margin-top: 10px;"><span style="color: #de463b; font-size: 1.2rem;" >￥139.00</span><span style="margin-left: 40px;"><button style="border: 1px solid #D7D7D7; background: white; width: 30px; height: 30px; font-size: 15px;" class="jian">-</button><button style="border: 0.05rem solid #D7D7D7; font-size: 15px; background: white; width: 40px; height: 30px;" class="val">1</button><button style="border: 1px solid #D7D7D7; font-size: 15px; background: white; width: 30px; height: 30px;" class="add">+</button></span></span></dd>
+				<dd style="clear: both;"></dd>
+			</dl>
+			</p>
+		</div>
+	</div>	
+	<div style="margin-bottom: 120px;"></div>
+	<div id="main3" style="position: fixed; bottom: 60.8px;"><img src="images/images/购物车_03.gif" style="width: 40px; height: 40px; border: 0;vertical-align: 10px;"/><span style="line-height: 40px;padding-left: 20px;vertical-align: 20px;">全选 </span><span style="color: black; font-size: 1rem; line-height: 40px; vertical-align: 20px;">合计￥149.00</span>
+		<a href="ConfirmPayment.html"><div style="float: right; background: red; width: 30%; height: 50px; color: white; text-align: center; line-height: 50px;">去結算(1)</div></a>
+	</div>
+			<footer>
+			<a href="index.html">
+				<div>
+					<img src="images/icon_home.png"/>
+					<p>首页</p>
+				</div>			
+			</a>
+			<a href="list.html">
+				<div>
+					<img src="images/icon_cate.png"/>
+					<p>分类</p>
+				</div>
+			</a>
+			<a href="shoppingcars.html">
+				<div>
+					<img src="images/icon_cart_selected.png"/>
+					<p style="color: red;">购物车</p>
+				</div>
+			</a>
+			<a href="myself.html">
+				<div>
+					<img src="images/icon_member.png"/>
+					<p>我的</p>
+				</div>
+			</a>
+		</footer>
+	</body>
+	<script type="text/javascript">
+		var jian=document.getElementsByClassName("jian");
+		var add=document.getElementsByClassName("add");
+		var val=document.getElementsByClassName("val");
+		for(var i=0;i<jian.length;i++){
+			jian[i].index=i;
+			jian[i].onclick=function(){
+				var value=parseInt(val[this.index].innerHTML);
+				if(value==0){
+					return;
+				}
+				value-=1;
+				val[this.index].innerHTML=value;
+			}
+			add[i].index=i;
+			add[i].onclick=function(){
+				var value=parseInt(val[this.index].innerHTML);
+				value+=1;
+				val[this.index].innerHTML=value;
+			}
+		}
+	</script>
+</html>
+
+

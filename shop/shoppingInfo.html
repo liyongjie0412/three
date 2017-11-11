@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0 auto;
+				padding: 0px;
+				color: #a9a9a9;
+			}
+			a{
+				text-decoration: none;
+				-webkit-tap-highlight-color: white;
+			}
+			#box{
+				width: 100%;
+			}
+			.head{
+				width: 100%;
+				display: block;
+				position: relative;
+			}
+			.head img{
+				width: 100%;
+				height: 390px;
+			}
+			#box1 img{
+				width: 100%;
+				height: 390px;
+				display: none;
+			}
+			#ul{
+				position: absolute;
+				top:360px;
+				left: 42%;
+			}
+			#ul li{
+				list-style: none;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				text-align: center;
+				float: left;
+				background: #E4E5E9;
+				margin-left: 10px;
+			}
+			.head span{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				background:#f4f4f4;
+				border-radius: 50%;
+				position: absolute;
+				top: 5px;
+				left: 15px;
+				opacity: 0.7;
+			}
+			.section{
+				width: 100%;
+				margin-top: 10px;
+			}
+			.section a{
+				display: block;
+			}
+			.left{
+				width:65%;
+				float: left;
+				line-height: 25px;
+				color: #666666;
+				font-size: 14px;
+				margin-left: 8px;
+				border-right: 1px solid #dfdfdf;
+			}
+			.right{
+				width:32%;
+				float: right;
+			}
+			.btn{
+				padding:14px 5%;
+				border-radius: 5px;
+				border: none;
+				background: #ff6400;
+				white-space: nowrap;
+				color: #e3ffff;
+				font-size: 14px;
+				margin-left: 7%;
+			}
+			.btn span{
+				padding: 2px;
+				color: #ff6400;
+				border-radius: 7px;
+				background: #e3ffff;
+				font-weight: bold;
+				margin-right: 3px;
+			}
+			.bottom{
+				clear: both;
+			}
+			.dashed{
+				width: 96%;
+				margin-top: 13px;
+				border-top: 1px dashed #EFEFEF;
+			}
+			.price{
+				width: 100%;
+				padding: 20px 0px;
+				border-bottom: 1px solid #dcdcdc;
+			}
+			.price p{
+				color: #e06f1f;
+				margin-left: 8px;
+			}
+			.price span{
+				font-size: 12px;
+				color: #a3a3a3;
+				float: right;
+				margin-right:7px;
+			}
+			.footer{
+				width: 100%;
+				height: 60px;
+				border-top: 1px solid #dcdcdc;
+				margin-top: 1px;
+				position: fixed;
+				bottom: 0px;
+				background: white;
+			}
+			.footer span{
+				display: inline-block;
+				height: 63px;
+				color: #666666;
+				border-right:1px solid #dcdcdc;
+				float: left;
+				text-align: center;
+				box-sizing: border-box;
+			}
+			.footer img{
+				margin-top: 5px;
+			}
+			.footer a{
+			    color: #EFEFEF;;
+			}
+			
+			html{
+				min-height: 100vh;
+				position: relative;
+			}
+			#main{
+				position: absolute;
+				bottom: 0px;
+				height: 0;
+				z-index: 100;
+				overflow: hidden;
+				width: 100%;
+				background: white;
+			}
+			#posi{
+				position: relative;
+				font-size: 14px;
+				height: 95px;
+			}
+			#posi p{
+				padding: 2px;
+			}
+			#iphone{
+				position: absolute;
+				background: white;
+				border: 1px solid #bab5bf;
+				border-radius: 6px;
+				padding: 3px;
+				top: -23px;
+				left: 2%;
+				width: 90px;
+			}
+			#money{
+				position: absolute;
+				left: 32%;
+			}
+			
+			#delete{
+				position: absolute;
+				right: 2%;
+				top: 20px;
+				width: 26px;
+			}
+			#inter p{
+				padding-left: 10px;
+				padding-top: 8px;
+				padding-bottom: 10px;
+			}
+			#inter p a{
+				border: 1px solid #bab5bf;
+				padding: 6px 6px;
+				text-decoration: none;
+				border-radius: 6px;
+			}
+			.sum{
+				width: 100%;
+				height: 60px;
+				line-height: 34px;
+				display: flex;
+			}
+			.sum p:nth-child(1){
+				margin-left: 0%;
+			}
+			.sum p:nth-child(2){
+				margin-right: 2%;
+			}
+			.sum p:nth-child(2) input{
+				width: 36px;
+			}
+			#footer1{
+				position:absolute;
+				bottom: 0;
+				display: block;
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+				height: 50px;
+			}
+			#toshop{
+				width: 49%;
+				background: orange;
+				height: 50px;
+				box-sizing: border-box;
+				line-height: 50px;
+				color: white;
+				text-align: center;
+			}
+			#ofcouse{
+				width: 49%;
+				text-align: center;
+				background: #ff6801;
+				color: white;
+				top: 550px;
+				height: 50px;
+				box-sizing: border-box;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="head" href="#">
+				<div id="box1">
+					<img src="images/name.gif" style="display: block;"/>
+					<img src="images/fill in on order_1.png"/>
+					<img src="images/list (11)_1.png"/>
+					<ul id="ul">
+				    	<li style="background:#ff6400; color: white;"></li>
+				    	<li></li>
+				    	<li></li>
+			    	</ul>
+				</div>
+				<span><a href="#" id="retTo"><img src="images/return_top_03.png" style="width: 15px; height: 15px;opacity: 0.7;"/></a></span>
+			</div>
+			<div class="section">
+				<div class="left">苹果6sp[12期分期送壳膜]Apple/苹果 iPhone 6s plus 全网通手机</div>
+				<div class="right">
+					<button class="btn"><span>￥</span>我要分销</button>
+				</div>
+				<div class="bottom"></div>
+			</div>
+			<div class="dashed"></div>
+			<div class="price">
+				<p>￥ 3558.00 - 4858.00<span>库存:271 销量:2701</span></p>
+			</div>
+			<a id="Animation"><div class="price" style="margin-top: 10px; margin-bottom: 65px;">
+				<p style="color: #666666;">请选择商品规格及数量<span><img src="images/right.png"/></span></p>
+			</div></a>
+			<div class="footer">
+				<a href="#" id="love"><span style="width: 20%;"><img id="like" src="images/like.gif"/><br />收藏</span></a><a href="shoppingcars.html"><span style="width: 20%;"><img src="images/shoppingCar.gif" style="margin-top:8px;"/><br />购物车</span></a>
+				<span style="background: #fd9a35; line-height: 60px; width: 30%; border: none;"><a href="#">加入购物车</a></span>
+				<span style="background: #ff6801; line-height: 60px; width: 30%; border: none; "><a href="FillInAnOrder.html">立即购买</a></span>
+			</div>
+			
+			<div id="main">
+				<div id="posi">
+				<img src="images/ShoppingChoose_03.gif" id="iphone"/>
+					<div id="money">
+						<p style="color: #ff6408;margin-top: 5px;">￥3558.00</p>
+						<p>商品编号:31736442</p>
+					</div>
+					<img src="images/ShoppingChoose_06.gif" id="delete"/>
+					</div>
+				<div id="inter">
+					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+					<p style="">颜色</p>
+					<p id="color" style="padding-top: 20px;">
+						<a class="choose2">金色</a>
+						<a class="choose2">深空灰</a>
+					</p>
+					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+					<p>套餐类型</p>
+					<p id="tc" style="padding-top: 20px;">
+						<a class="choose3">官方标配</a>
+						<a class="choose3">套餐一</a>
+						<a class="choose3">套餐二</a>
+					</p>
+					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+					<div class="sum">
+						<p>数量</p>
+						<p>
+							<button id="left" style="width: 20px; height: 20px;">—</button><input type="text" value="0" id="input" style="width: 20px; height: 16px; text-align: center;"/><button id="right" style="width: 20px; height: 20px;"> + </button>
+						</p>
+					</div>
+					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;padding-top: 0px;"></p>
+					<div id="footer1">
+						<a id="toshop">加入购物车</a><a id="ofcouse">确认</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var main=document.getElementById("main");
+		var Animation=document.getElementById("Animation");
+		Animation.onclick=function(){
+			main.style.height='84vh';
+			main.style.overflow="visible";
+		}
+		var delete1=document.getElementById("delete");
+		delete1.onclick=function(){
+			main.style.height='0px';
+			main.style.overflow="hidden";
+		}
+		
+		var retTo=document.getElementById('retTo');
+		retTo.onclick=function(){
+			history.go(-1);
+		}
+		var love=document.getElementById("love");
+		var turn=false;
+		var like=document.getElementById("like");
+		love.onclick=function(){
+			if(turn==false){
+				like.src="images/like(2).png";
+				turn=true;
+			}else{
+				like.src="images/like.gif";
+				turn=false;
+			}
+		}
+		
+		var box1=document.getElementById("box1");
+		var li=box1.getElementsByTagName("li");
+		var img=box1.getElementsByTagName("img");
+		var index=0;
+		var s=setInterval(change,1000);
+		function change(){
+			index++;
+			if(index==img.length){
+				index=0;
+			}
+			for(var i=0;i<img.length;i++){
+				img[i].style.display="";
+				li[i].style.background="";
+				li[i].style.color="";
+			}
+			img[index].style.display="block";
+			li[index].style.background="#ff6400";
+			li[index].style.color="#E4E5E9";
+		}
+		box1.onmouseover=function(){
+			clearInterval(s);
+		}
+		box1.onmouseout=function(){
+			s=setInterval(change,1000);
+		}
+		
+	</script>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#toshop').click(function(){
+				window.location.href='shoppingcars.html'
+			})
+			$('#left').click(function(){
+				var value=$('#input').val();
+				if(value<=0){
+					value=0;
+				}else{
+					value--;
+					$('#input').val(value)
+				}
+				
+			})
+			
+			$('#right').click(function(){
+				var value=$('#input').val();
+				value++;
+				$('#input').val(value)
+			})
+			
+			var data=[];
+			$('#color a').each(function(){
+				$(this).click(function(){
+					$(this).css({'border':'1px solid red','color':'red'}).siblings().css({'border':'1px solid #bab5bf','color':'#a9a9a9'});
+					data[0]=$(this).html();
+				})
+			})
+			
+			$('#tc a').each(function(){
+				$(this).click(function(){
+					$(this).css({'border':'1px solid red','color':'red'}).siblings().css({'border':'1px solid #bab5bf','color':'#a9a9a9'});
+					data[1]=$(this).html();
+				})
+			})
+			//确认
+			$('#ofcouse').click(function(){
+				data[2]=$('#input').val();
+				if(data[0]!=undefined&&data[1]!=undefined&&data[2]>0){
+					console.log(data);
+					$('#main').css({'height':'0','overflow':'hidden'})
+				}
+			})
+		})
+	</script>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			a{
+				text-decoration: none;
+				-webkit-tap-highlight-color: #bc0000;
+			}	
+			html{
+				font-size: 16px;
+			}
+			ul li{
+				list-style: none;
+			}
+			header{
+				padding: 0 2%;
+				box-sizing: border-box;
+				width: 100%;
+				background: #bc0000;	
+				color: white;
+				font-weight: bolder;
+				line-height: 60px;
+			}
+			header a{
+				color: white;
+			}
+			header h2{
+				float: left;
+			}
+			header ul{
+				width: 75%;
+				display: flex;
+				float: right;
+				justify-content: space-between;
+			}
+			.contain{
+				margin-bottom: 10px;
+				background: #F6F6F6;
+				width: 100%;
+				box-sizing: border-box;
+			}
+			.contain div{
+				width: 100%;
+			}
+			.contain p{
+				word-wrap:break-word;
+				width: 100%;
+				box-sizing: border-box;
+				padding: 0 2%;
+				/*overflow: hidden;*/	
+			}
+			.type{
+				color: #770911;
+				margin-right: 2px;
+				font-size: 18px;
+				font-weight: bolder;
+			}
+			.contain p a{
+				font-size: 12px;
+				margin: 0 7px;
+				/*white-space: nowrap;*/
+			}
+			.contain p span{
+				font-size: 14px;
+				white-space: nowrap;
+			}
+			.active{
+				color: white;
+				white-space: nowrap;
+				background: #f72900;
+			}
+			.first{
+				white-space: nowrap;
+			}
+						.choose_name{
+				width: 100%;
+				line-height: 40px;
+				color: white;
+				background: #bc0000;
+				font-weight: bolder;
+				text-align: center;
+			}
+			.nav{
+				box-sizing: border-box;
+				border: 1px solid #d1d1d1;
+				width: 92%;
+				margin:0 4%;
+				line-height: 38px;
+				background: #eaeaea;
+				margin-bottom: 8px;
+			}
+			.nav ul{
+				font-size: 14px;
+				width: 100%;
+				display: flex;
+			}
+			.nav ul li{
+				text-align: center;
+			}
+			.nav ul li:first-child{
+				width: 39%;
+			}
+			.nav ul li:nth-child(2){
+				width: 19%;
+			}
+			.nav ul li:nth-child(3){
+				width: 19%;
+			}
+			.nav ul li:nth-child(4){
+				width: 24%;
+			}
+			.container{
+				width: 92%;
+				margin:0 4% 10px;
+			}
+			.orange{
+				color: #e8aa65;
+			}
+			.blue{
+				color: #0323fb;
+			}
+			.red{
+				color: #dc6840;
+			}
+			table{
+				width: 100%;
+				box-sizing: border-box;
+				 border-collapse: collapse;
+			}
+			table tbody tr td:first-child{
+				background: #ffffd0;
+				width: 38%;
+			}
+			table tbody tr td:nth-child(2){
+				width: 19%;
+			}
+			table tbody tr td:nth-child(3){
+				width: 19%;
+			}
+			table tbody tr td:nth-child(4){
+				width: 24%;
+			}
+			table tbody tr td{
+				box-sizing: border-box;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #d1d1d1;
+			}
+			table tbody tr td img{
+				vertical-align: -5px;
+				height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<header >
+			<h2>号卡</h2>
+			<ul>
+				<li><a href="#">移动选号</a></li>
+				<li><a href="#">电信选号</a></li>
+				<li><a href="#">联通选号</a></li>
+			</ul>
+			<div style="clear: both;"></div>
+		</header>
+		<div class="contain">
+			<div><p class="city"><span class="type">市县:</span><a class="active first">全省</a>|<a>北京市</a></p></div>
+			<div><p class="number"><span class="type">号段:</span><a class="active first">全部</a>|<a>139</a>|<a>138</a>|<a>1390</a>|<a>1380</a>|<a>137</a>|<a>136</a>|<a>135</a>|<a>134</a>|<a>188</a>|<a>187</a>|<a>183</a>|<a>182</a>|<a>159</a>|<a>158</a>|<a>152</a>|<a>150</a>|<a>157</a></p></div>
+			<div><p class="numbers"><span class="type">号码特征:</span><a class="active first">全部</a>|<a>AA</a>|<a>AAA</a>|<a>AAAA</a>|<a>ABAB</a>|<a>AABB</a>|<a>ABBA</a>|<a>ABAC</a>|<a>BACA</a>|<a>ABC</a>|<a>ABCD</a>|<a>AABCC</a>|<a>AABBB</a>|<a>AAABBB</a></p></div>
+		</div>
+		<div class="choose_name">
+			移动选号
+		</div>
+		<div class="nav">
+			<ul>
+				<li>号码</li>
+				<li>话费</li>
+				<li>月租</li>
+				<li>操作</li>
+			</ul>
+		</div>
+		<div class="container">
+			<table cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+					<tr>
+						<td><span class="orange">158</span><span class="blue">0158</span><span class="red">1486</span></td>
+						<td>70元</td>
+						<td>29元</td>
+						<td class="paysure"><img src="images/buy_03.gif"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.city a').each(function(){
+				$(this).click(function(){
+					$(this).addClass('active').siblings().removeClass('active');
+				})
+			});
+			$('.number a').each(function(){
+				$(this).click(function(){
+					$(this).addClass('active').siblings().removeClass('active');
+				})
+			});
+			$('.numbers a').each(function(){
+				$(this).click(function(){
+					$(this).addClass('active').siblings().removeClass('active');
+				})
+			});
+			
+			
+			
+			$('.paysure').each(function(){
+				$(this).click(function(){					
+					window.location.href='cardNumberBuy.html';
+				})
+			});
+		})
+	</script>
+</html>

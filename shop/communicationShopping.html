@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		<style type="text/css">
+			a{
+				color: black;
+				text-decoration: none;
+				-webkit-tap-highlight-color: white;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			html{
+				font-size: 16px;
+			}
+			body{
+				background: white;
+			}
+			#lunbo{
+				width: 100%;
+				height: 200px;
+				background: deepskyblue;
+			}
+			.nav{
+				margin-top: 30vh;
+				width: 100%;
+				padding: 20px 2% 0px;
+				background: white;
+				box-sizing: border-box;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+			}
+			.nav a{
+				display: block;
+				width: 22%;
+				-webkit-tap-highlight-color: white;
+			}
+			.nav div{
+				width: 100%;
+			}
+			.nav div img{
+				width: 60%;
+				margin-left: 20%;
+				border-radius: 50%;
+			}
+			.nav div p{
+				text-align: center;
+				line-height: 2rem;
+				font-size: 0.8rem;
+				color: grey;
+			}
+			.contain{
+				margin-bottom: 0px;
+				width: 100%;
+				background: #aba2a2;
+				box-sizing: border-box;
+				padding-top: 4px;
+				justify-content: space-between;
+			}
+
+			#main .swiper-container {
+			    width: 100vw;
+			    height: auto;
+			    position: absolute;
+			}
+			.img_show{
+				padding: 1rem 0 ;
+				margin: 0;
+				width: 100%;
+				background: white;
+				position: relative;
+				margin-bottom: 0.25rem;
+			}
+			.img_show img{
+				position: absolute;
+				right: 5%;
+				bottom: 5px;
+			}
+			.img_show h3{
+				font-size: 1.5rem;
+				font-weight: normal;
+				text-align: center;
+				margin-bottom: 0.5rem;
+			}
+			.img_show p{
+				margin-left: 5%;
+				width: 50%;
+				text-align: center;
+				font-size: 1.2rem;
+			}
+			.contain_box{
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			.contain_box>a{
+				display: block;
+				height: 49vw;
+				box-sizing: border-box;
+				margin-bottom: 4px;
+				background: white;
+				width: 49.5%;
+			}
+			.contain_box>a>div{
+				border: 1px solid #f1f1f1 ;
+				width: 35vw;
+				height: 35vw;
+				height: ;
+				margin: 0.3125rem auto 0;
+			}
+			.contain_box>a>div img{
+				width: 70%;
+				margin-left: 15%;
+				margin-top: 5%;
+			}
+			.contain_box>a>p{
+				font-size: 0.6rem;
+				width: 80%;
+				margin-left: 10%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<!--<div class="hLeft">
+				<i class="iconfont icon-return"></i>
+			</div>
+			<div class="hCenter">
+				<div class="bac">
+					<i class="iconfont icon-sousuo searchfont"></i><input type="text" placeholder="输入关键字在本店搜索" />
+				</div>
+			</div>
+			<div class="hright">
+				<i class="iconfont icon-switch"></i>
+			</div>-->
+		</div>
+		<div id="main">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="images/nav_li_01.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="images/nav_li_01.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="images/nav_li_01.png" />
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div class="nav">
+			
+			<a href="newPhone.html">
+				<div>
+					<img src="images/nav_li_24.png" />
+					<p>优品3c</p>
+				</div>
+			</a>
+		</div>
+		<div class="contain">
+			<div class="img_show">
+				<h3>热销产品</h3>
+				<p>VIVO Xplay6</p>
+				<p>曲屏:双摄柔光更美</p>
+				<img src="images/nav_li_31.png" />
+			</div>
+			<div class="contain_box">
+
+				<a href="shoppingInfo2.html">
+					<div>
+						<img src="images/fill in on order (3)_1.png" />
+					</div>
+					<p>oppo 89s Plus 64G内存版</p>
+					<p>全网通4G手机 双卡双待</p>
+				</a>
+
+			
+			</div>
+		</div>
+	</body>
+		<script src="jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	$(function(){
+		//获取url地址上的参数
+	   	 var $_GET = (function(){
+		    var url = window.document.location.href.toString();
+		    var u = url.split("?");
+		    if(typeof(u[1]) == "string"){
+		        u = u[1].split("&");
+		        var get = {};
+		        for(var i in u){
+		            var j = u[i].split("=");
+		            get[j[0]] = j[1];
+		        }
+		        return get;
+		    } else {
+		        return {};
+		    }
+		})();
+
+		//获取初始商品信息
+		$(document).ready(function() { 
+      
+		  // 任何需要执行的js特效 
+		  $.get("http://localhost/php/api_a/thinkphp_5.0.10_full/public/index.php/index/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":158,"state":"3","limit":"14"},function(data){
+                 if(data.status==0)
+                 {
+                 	 var str="";
+                     $.each(data.data,function(k,v){
+                       str+='<a href="shoppingInfo2.html"><div><img src="'+v.img+'" /></div><p>'+v.name+'</p><p>'+v.search_words+'</p></a>' 
+                     })
+                     $(".contain_box").html(str)
+                 }
+                 else
+                 {
+                 	alert("系统加载中，请稍候")
+                 }              
+	      },"jsonp")
+
+          //导航展示
+          $.get("http://localhost/php/api_a/thinkphp_5.0.10_full/public/index.php/index/sel/sel",{"access_token":"84d2acebe4a6","id":"158"},function(data){
+          // alert(data)
+          var str=" ";
+          $.each(data.data,function(k,v){
+          	// alert(v.images[0])
+          	if(v.id=='160' || v.id=='199' )
+          	{
+          		str+='<a href="newPhone.html?brand_id='+v.id+'"><div><img src="./images/'+v.images+'" /><p>'+v.name+'</p></div></a>';
+          	}
+          	else
+          	{
+          		str+='<a href="phoneAccessories.html?category_id='+v.id+'"><div><img src="./images/'+v.images+'" /><p>'+v.name+'</p></div></a>';
+          	}
+             
+          })
+          // alert(str)
+          $('.nav').html(str)
+	   },"jsonp")
+		
+	    })
+
+	 })
+</script>
+</html>
+

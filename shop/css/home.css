@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #f5f5f5;
+	/*height: 320vh;*/
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+ul,ol,li{
+	list-style: none;
+}
+input::-webkit-input-placeholder { /* WebKit browsers*/ 
+　　color:#999;font-size:0.8rem;
+　　}
+input:-moz-placeholder {  /* Mozilla Firefox 4 to 18*/ 
+　　color:#999;font-size:0.8rem;
+　　}
+input::-moz-placeholder {  /* Mozilla Firefox 19+*/ 
+　　color:#999;font-size:0.8rem;
+　　}
+input:-ms-input-placeholder { /* Internet Explorer 10+*/ 
+　　color:#999;font-size:0.8rem;
+}
+#box{
+	position: absolute;
+	top: 30vh;
+}
+.iconfont{
+	font-size: 2rem;
+}
+.searchfont{
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+#header{
+	width: 100vw;
+	height: 8vh;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	display: flex;
+}
+#header .hLeft{
+	width: 10vw;
+	height: 8vh;
+	color: white;
+}
+
+#header .hCenter{
+	flex: 4;
+	width: 80vw;
+	height: 8vh;
+	display: flex;
+	justify-content: center;
+
+}
+#header .hCenter .bac{
+	margin-top: 0.8vh;
+	margin-left: 10vw;
+	background: white;
+	width: 100%;
+	height: 70%;
+	border: 1px solid lightgray;
+	border-radius: 8vw;
+	position: relative;
+	padding-left: 6vw;
+}
+#header .hCenter .bac input{
+	border: none;
+	outline: none;
+	position: absolute;
+	top: 0.8vh;
+}
+#header .hright{
+	width: 10vw;
+	height: 8vh;
+	flex: 1;
+	text-align: right;
+	color: white;
+}
+#footer{
+	width: 100vw;
+	height: 10vh;
+	background: white;
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+	display: flex;
+}
+#footer .footNav{
+	flex: 1;
+	text-align: center;
+}
+#footer .footNav a{
+	color: #666666;
+	font-size: 0.8rem;
+}
+#footer .footNav a:hover{
+	color: red;
+}
+#main{
+	width: 100vw;
+	height: auto;
+}
+#main .swiper-container{
+	width: 100vw;
+	height: auto;
+	position: fixed;
+	top: 0;
+}
+#main .swiper-container img{
+	width: 100vw;
+	height: 30vh;
+}
+#main .nav{
+	width: 100vw;
+	height: 15vh;
+	background: #f5f5f5;
+	display: flex;
+	padding-top: 2vh;
+}
+#main .nav .tu{
+	flex: 1;
+	text-align: center;
+	color: gray;
+	font-size: 0.8rem;
+}
+#main .nav .tu img{
+	width: 50%;
+	height: 50%;
+	margin-bottom: 0.4rem;
+}
+#message{
+	width: 94vw;
+	height: 10vw;
+	background: white;
+	margin-left: 3vw;
+	border-radius: 10vw;
+	line-height: 9vw;
+	color: gray;
+	font-size: 1rem;
+}
+#message img{
+	margin-left: 4vw;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+#shopList{
+	width: 94vw;
+	height: 120vh;
+	margin: 3vw;
+	display: flex;
+}
+#shopList .shopListChild{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.ChildOne{
+	width: 100%;
+	height: 25%;
+	border: 4px solid #f5f5f5;
+	position: relative;
+	background: white;
+	border-radius: 1rem;
+}
+.ChildOne h5{
+	margin-top: 10%;
+	margin-left: 2%;
+}
+.ChildOne p{
+	color: #5e5e5e;
+	margin-left: 2%;
+}
+.ChildOne img{
+	position: absolute;
+	right: 0.2rem;
+	bottom: 0.2rem;
+	height: 10rem;
+}
+.ChildTwo{
+	width: 100%;
+	height: 25%;
+	border: 4px solid #f5f5f5;
+	border-radius: 1rem;
+}
+.ChildTwo h5{
+	margin-top: 10%;
+	margin-left: 2%;
+}
+.ChildTwo p{
+	color: #5e5e5e;
+	margin-left: 2%;
+}
+.ChildTwo img{
+	position: absolute;
+	right: 0.2rem;
+	bottom: 0.2rem;
+	height: 10rem;
+}
+#logo{
+	width: 94vw;
+	height: auto;
+	margin: 3vw 0vw;
+}
+#logo img{
+	width: 100%;
+	height: 20vh;
+}
+#shopBox{
+	width: 94vw;
+	height: auto;
+	margin: 3vw;
+	display: flex;
+	flex-wrap: wrap;
+}
+#shopBox .shopBox{
+	width: 47vw;
+	height: 30vh;
+	background: white;
+	border: 4px solid #f5f5f5;
+}
+#shopBox .shopBox img{
+	width: 100%;
+	height: 60%;
+}
+#shopBox .shopBox p{
+	font-size: 0.8rem;
+}
+#shopBox .shopBox h5{
+	color: orange;
+}
+#shopBox .shopBox h5 i{
+	color: gray;
+}

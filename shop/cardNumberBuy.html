@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			a{
+				text-decoration: none;
+				-webkit-tap-highlight-color: #bc0000;
+			}	
+			html{
+				font-size: 16px;
+			}
+			ul li{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			header{
+				position: fixed;
+				top: 0;
+				background: white;
+				width: 100%;
+				text-align: center;
+				height: 40px;
+				border-bottom: 1px solid #d7d4cf;
+				line-height: 40px;
+				font-size: 1rem;
+			}
+			header a{
+				position: absolute;
+				left: 5%;
+				top: 5px;
+			}
+			header a img{
+				width: 20px;
+			}
+			.contain{
+				padding-top: 5px;
+				margin-top: 40px;
+				width: 100%;
+			}
+			.main_img{
+				width: 80%;
+				margin: 0 10%;
+				margin-bottom: 10px;
+			}
+			.choose{
+				width: 97%;
+				margin-left: 3%;
+			}
+			.choose>div{
+				width: 100%;
+				box-sizing: border-box;
+				border: 2px solid #dfdfdf;
+				border-bottom: none;
+				border-right: none;
+				position: relative;
+				padding-top: 20px;
+				padding-left: 20px;
+			}
+			.numb{
+				position: absolute;
+				left: 0;
+				top: 0;
+				font-size: 0.7rem;
+			}
+			.numb span{
+				font-size: 1rem;
+				text-align: center;
+				display: inline-block;
+				width: 28px;
+				height: 28px;
+				line-height: 28px;
+				background: #ebebeb;
+				margin-right: 5px;
+			}
+			.numb_info{
+				color: red;
+			}
+			.numb_info span{
+				font-size: 1.4rem;
+				margin-left: 10px;
+			}
+			.ts{
+				font-size: 0.6rem;
+				text-align: right;
+			}
+			.choose>.choose_module2{
+				padding-left: 8px;
+			}
+			.choose_module2 p:nth-child(2){
+				margin-top: 15px;
+			}
+			.choose_module2 p:nth-child(3){
+				margin-left: 15px;
+			}
+			.choose_module2 p{
+				margin-bottom: 5px;
+				font-size: 0.9rem;
+			}
+			.choose_module2 span{
+				border: 1px solid #ea6163;
+				text-align: center;
+				color: #ea6163;
+				padding: 0 4px;
+			}
+			.choose_module2 .numb span{
+				padding: 0;
+			}
+			.choose_module2 .numb{				
+				font-size: 0.7rem;
+			}
+			.choose_module2 a{
+				padding: 0 4px;
+				color: #08fcff;
+				margin-left: 5px;
+				border-bottom: 1px double black;
+			}
+			.ownChoose{
+				width: 92%;
+				margin: 0 3%;
+			}
+			.ownChoose h4{
+				color: #ef4d50;
+				font-weight: normal;
+				font-size: 0.9rem;
+			}
+			.ownChoose table{
+				width: 100%;
+				font-size: 0.5rem;
+			}
+			.ownChoose table tr:nth-child(1){
+				background: #f0f0f0;
+			}
+			.ownChoose table tr:nth-child(2){
+				background: #fff9d2;
+				color: #ca003e;
+			}
+			.warnning{
+				width: 100%;
+				box-sizing: border-box;
+				padding: 0 5px;
+				color: #ca003e;
+				margin-top: 5px;
+				font-size: 0.8rem;
+			}
+			.surebuy{
+				margin-top: 5px;
+				width: 45%;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="cardNumber.html"><img src="images/confirm payment (3)_1.png" /></a>
+			手机号套餐套餐详情
+		</header>
+		<div class="contain">		
+			<img class="main_img" src="images/buy_03.png" />
+			<div class="choose">
+				<div class="choose_module1">
+					<p class="numb"><span >1</span>选择号码</p>
+					<p class="numb_info">北京<span>15811145514</span></p>
+					<p class="ts">(温馨提示：号码选定后为您保留30分钟，请您在30分钟内提交订单)</p>
+				</div>
+				<div class="choose_module2">
+					<p class="numb"><span style="background: #ef4d50; color: white;" >2</span>选择套餐</p>
+					<p>合约计划：北京/移动号码/选号入网</p>
+					<p>合约期：<span>24月</span></p>
+					<p>套餐类型：<span>4G流量套餐</span><a>套餐资费选择表</a></p>
+				</div>		
+			</div>
+			<div class="ownChoose">
+				<h4>您已选择：</h4>
+				<table cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>套餐月费</td>
+							<td>24个月共计返回费</td>
+							<td>即使到账话费</td>
+							<td>通话时长</td>
+							<td>4G流量</td>
+							<td>预存金额</td>
+						</tr>
+						<tr>
+							<td>29元/月</td>
+							<td>1635元</td>
+							<td>70元</td>
+							<td>300分钟全国+180分钟本地</td>
+							<td>1G全国+2G本地</td>
+							<td>170元</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="warnning">
+				温馨提示：订购完成后工作人员会联系您上门为您实名开卡入网，请您准备好身份证原件，保持电话畅通，感谢您的配合
+			</div>
+			<img class="surebuy" src="images/buy_10.png" />
+		</div>
+	</body>
+</html>
