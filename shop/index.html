@@ -458,5 +458,36 @@
 					},500);
 				};
 			};
-		</script>
+		$(function(){
+			$(document).ready(
+					function(){
+						var a = location.href;
+						var b = a.split("/");
+						var c = b.slice(b.length-1, b.length).toString(String).split(".");
+						var file=c.slice(0,1);
+						$.ajax({
+							url:"http://lf.com/index/port/index",
+							type:"get",
+							data:{access_token:"84d2acebe4a6", location:"index"},
+							dataType:"jsonp",
+							success:function(msg){
+//
+								var str="";
+								$.each(msg.data,function(k,v){
+									//alert(v.content)
+                                  $(".swiper-wrapper").find("div").eq(k).find("img").attr("src", v.content)
+								 $(".swiper-wrapper").find("div").eq(k+msg.data.length).find("img").attr("src", v.content)
+									str+='<div class="swiper-slide ">';
+									str+='<img src="'+ v.content+'">';
+									str+='</div>';
+
+								})
+							}
+						})
+
+
+					}
+			)
+
+		})
 </html>
