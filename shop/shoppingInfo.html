@@ -247,27 +247,27 @@
 		<div id="box">
 			<div class="head" href="#">
 				<div id="box1">
-					<img src="images/name.gif" style="display: block;"/>
-					<img src="images/fill in on order_1.png"/>
-					<img src="images/list (11)_1.png"/>
+			<!-- 			<img src="images/name.gif" style="display: block;"/>
+						<img src="images/fill in on order_1.png"/>
+						<img src="images/list (11)_1.png"/>
 					<ul id="ul">
 				    	<li style="background:#ff6400; color: white;"></li>
 				    	<li></li>
 				    	<li></li>
-			    	</ul>
+			    		</ul> -->
 				</div>
 				<span><a href="#" id="retTo"><img src="images/return_top_03.png" style="width: 15px; height: 15px;opacity: 0.7;"/></a></span>
 			</div>
 			<div class="section">
-				<div class="left">苹果6sp[12期分期送壳膜]Apple/苹果 iPhone 6s plus 全网通手机</div>
+				<div class="left" id="name"><!-- 苹果6sp[12期分期送壳膜]Apple/苹果 iPhone 6s plus 全网通手机 --></div>
 				<div class="right">
 					<button class="btn"><span>￥</span>我要分销</button>
 				</div>
 				<div class="bottom"></div>
 			</div>
 			<div class="dashed"></div>
-			<div class="price">
-				<p>￥ 3558.00 - 4858.00<span>库存:271 销量:2701</span></p>
+			<div class="price" id="price">
+			<!-- 	<p>￥ 3558.00 - 4858.00<span>库存:271 销量:2701</span></p> -->
 			</div>
 			<a id="Animation"><div class="price" style="margin-top: 10px; margin-bottom: 65px;">
 				<p style="color: #666666;">请选择商品规格及数量<span><img src="images/right.png"/></span></p>
@@ -281,27 +281,29 @@
 			<div id="main">
 				<div id="posi">
 				<img src="images/ShoppingChoose_03.gif" id="iphone"/>
-					<div id="money">
-						<p style="color: #ff6408;margin-top: 5px;">￥3558.00</p>
-						<p>商品编号:31736442</p>
+					<div id="money" class="money">
+						<!-- <p style="color: #ff6408;margin-top: 5px;">￥3558.00</p>
+						<p>商品编号:31736442</p> -->
 					</div>
 					<img src="images/ShoppingChoose_06.gif" id="delete"/>
 					</div>
 				<div id="inter">
-					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
-					<p style="">颜色</p>
-					<p id="color" style="padding-top: 20px;">
-						<a class="choose2">金色</a>
-						<a class="choose2">深空灰</a>
-					</p>
-					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
-					<p>套餐类型</p>
-					<p id="tc" style="padding-top: 20px;">
-						<a class="choose3">官方标配</a>
-						<a class="choose3">套餐一</a>
-						<a class="choose3">套餐二</a>
-					</p>
-					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+					<div class="con">
+				<!-- 		<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+						<p style="">颜色</p>
+						<p id="color" style="padding-top: 20px;">
+							<a class="choose2">金色</a>
+							<a class="choose2">深空灰</a>
+						</p>
+						<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>
+						<p>套餐类型</p>
+						<p id="tc" style="padding-top: 20px;">
+							<a class="choose3">官方标配</a>
+							<a class="choose3">套餐一</a>
+							<a class="choose3">套餐二</a>
+						</p>
+						<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p> -->
+					</div>
 					<div class="sum">
 						<p>数量</p>
 						<p>
@@ -309,7 +311,7 @@
 						</p>
 					</div>
 					<p style="border-top: 1px solid #bab5bf; margin-left: 10px;padding-top: 0px;"></p>
-					<div id="footer1">
+					<div id="footer1" products_id="">
 						<a id="toshop">加入购物车</a><a id="ofcouse">确认</a>
 					</div>
 				</div>
@@ -376,9 +378,9 @@
 	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('#toshop').click(function(){
-				window.location.href='shoppingcars.html'
-			})
+			// $('#toshop').click(function(){
+			// 	window.location.href='shoppingcars.html'
+			// })
 			$('#left').click(function(){
 				var value=$('#input').val();
 				if(value<=0){
@@ -392,12 +394,25 @@
 			
 			$('#right').click(function(){
 				var value=$('#input').val();
-				value++;
+				var store_nums=$(".store_nums").attr("store_nums")
+				if(value>store_nums&&store_nums<99||value==store_nums)
+				{
+					value=store_nums;
+				}
+				else if(value==99)
+				{
+					value=99
+				}
+				else
+				{
+					 value++;
+				}
 				$('#input').val(value)
 			})
 			
 			var data=[];
 			$('#color a').each(function(){
+
 				$(this).click(function(){
 					$(this).css({'border':'1px solid red','color':'red'}).siblings().css({'border':'1px solid #bab5bf','color':'#a9a9a9'});
 					data[0]=$(this).html();
@@ -418,6 +433,200 @@
 					$('#main').css({'height':'0','overflow':'hidden'})
 				}
 			})
+				
+				//选择规格
+				var type=""
+				$(document).on("click",".Notype",function(){
+
+								$(this).css({'border':'1px solid red','color':'red'}).siblings().css({'border':'1px solid #bab5bf','color':'#a9a9a9'});	
+								$(this).removeClass("Notype")
+								$(this).addClass("type")
+								//过滤所有的其他元素a
+								$(this).siblings("a").removeClass("type")	
+								$(this).siblings("a").addClass("Notype")
+								$('#input').val(0)
+
+				})
+				//填写数量
+				$("#input").blur(function(){
+					var num=$('#input').val()
+					var store_nums=$(".store_nums").attr("store_nums")
+					if(num>store_nums)
+					{
+						num=store_nums
+					}
+					if(num>99)
+					{
+						num=store_nums
+					}
+					if(num>99&&store_nums>99)
+					{
+						num=99
+					}
+					$('#input').val(num)
+
+				})
+
+				//提交购物车
+				$("#toshop").click(function(){
+
+					var type=""
+					var classify=$(".classify").length
+					if($(".type").length==0)
+					{
+						alert("请先选择产品规格")
+						return false;
+					}
+					if($(".type").length<classify)
+					{
+						alert("请先选择产品规格")
+						return false;
+					}
+					//数量
+					var num=$('#input').val()
+					if(num==0)
+					{
+						alert("请先规定货品数量")
+						return false;
+					}
+
+					//货品id
+					var products_id=$('#footer1').attr("products_id")
+					console.log(num)
+					console.log(products_id)
+
+				})
+
+
+				
+
+				//获取货品 id
+				$(document).on("click",".classify",function(){
+					var type=""
+					var classify=$(".classify").length
+					//如果选中个数 等于类型个数
+					if($(".type").length==classify)
+					{
+						//整理规格值
+						var specArray = [];
+						$('.type').each(function(k,v){
+							val=$(v).attr("val")
+							var reg = new RegExp(",","g");//g 表示全部替换
+							val=val.replace(reg,'","');
+							var reg = new RegExp(":","g");//g 表示全部替换
+							val=val.replace(reg,'":"');
+							var reg = new RegExp("{","g");//g 表示全部替换
+							val=val.replace(reg,'{"');
+							var reg = new RegExp("}","g");//g 表示全部替换
+							val=val.replace(reg,'"}');
+							specArray.push(val);
+						});
+						var specJSON = '['+specArray.join(",")+']';
+						//商品id
+						var goods_id=$(".goods").attr("goods_id");
+						$.ajax({
+					 		url:"http://127.0.0.1/Big_training/commune/appshop/public/index.php/index/index/get_products",
+					 		type:"get",
+					 		data:{
+					 			"access_token":"84d2acebe4a6",
+					 			"goods_id":goods_id,
+					 			"specJSON":specJSON,
+					 		},
+					 		dataType:"jsonp",
+					 		success:function(data){
+								if(data.status==0)
+								{
+									
+									$("#footer1").attr("products_id",data.data.id)
+									$(".money").html('<p style="color: #ff6408;margin-top: 5px;" class="goods" id="goods_price" goods_id="'+data.data.goods_id+'" products_id="'+data.data.id+'" >货品价格:￥'+data.data.sell_price+'</p><p id="products_no">货品编号:'+data.data.products_no+'</p><p class="store_nums" store_nums="'+data.data.store_nums+'">货品库存:'+data.data.store_nums+'</p>');
+								}
+							}
+						})
+					}			
+					
+				})
+			//点击确定
+			$("#ofcouse").click(function(){
+				$("#delete").trigger("click")
+			})
+				
+
+			//jsonp 获取商品信息	
+			$.ajax({
+		 		url:"http://127.0.0.1/Big_training/commune/appshop/public/index.php/index/index/get_goods",
+		 		type:"get",
+		 		data:{
+		 			"access_token":"84d2acebe4a6",
+		 			"goods_id":"8174",
+		 		},
+		 		dataType:"jsonp",
+		 		success:function(data){
+					if(data.status==0)
+					{
+					
+						//轮播图展示
+						var len=data.data.imgs.length;
+						var imgs=""
+						imgs+='<img src="'+data.data.imgs[0].img+'" style="display: block;"/>'
+
+						if(len>1)
+						{
+						     imgs+='<img src="'+data.data.imgs[1].img+'"/>'
+						}
+						if(len>2)
+						{
+						     imgs+='<img src="'+data.data.imgs[2].img+'"/>'
+						}
+						imgs+='<ul id="ul">'
+
+					    	imgs+='<li style="background:#ff6400; color: white;"></li>'
+					    	if(len>1)
+					    	{
+					    		imgs+='<li></li>'
+					    	}
+					    	if(len>2)
+					    	{
+					    		imgs+='<li></li>'
+					    	}
+				    		imgs+='</ul>'
+						$("#box1").html(imgs)
+
+
+						//商品名称
+						$("#name").html(data.data.name);
+						//商品价格 库存 销量
+						$("#price").html("<p>￥ "+data.data.sell_price+" - "+data.data.market_price+"<span>库存:"+data.data.store_nums+" 销量:"+data.data.sale+"</span></p>")
+						//商品价格 编号 库存
+						$("#iphone").attr("src",data.data.img)
+						$(".money").html('<p style="color: #ff6408;margin-top: 5px;" class="goods" id="goods_price" goods_id="'+data.data.id+'">商品价格:￥'+data.data.sell_price+'</p><p id="products_no">商品编号:'+data.data.goods_no+'</p><p class="store_nums"  store_nums="'+data.data.store_nums+'">商品库存:'+data.data.store_nums+'</p>');
+
+						//商品规格
+						var con=$.parseJSON(data.data.spec_array);
+						var str="";
+						$.each(con,function(k,v){
+							str+='<p style="border-top: 1px solid #bab5bf; margin-left: 10px;margin-top: 20px;padding-top: 0px;"></p>'
+							str+='<p style="">'+v.name+'</p>'
+							str+='<p class="classify"  style="padding-top: 20px;">'
+							 var val=v.value.split(',');
+							 $.each(val,function(ke,va){
+								str+="<a class='Notype' val='{id:"+v.id+",type:"+v.type+",value:"+va+",name:"+v.name+"}'>"+va+"</a>"
+							})
+							 str+='</p>'
+						})
+						$(".con").html(str)	
+					}
+					else
+					{
+						alert(data.message)
+						return false;
+					}
+				 }
+			})
+
+
+
+
+
 		})
 	</script>
 </html>
