@@ -1,5 +1,5 @@
 <?php
-namespace app\index\controller;
+namespace app\comm\controller;
 use think\View;
 use think\Db;
 use think\Controller;
