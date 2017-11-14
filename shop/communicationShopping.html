@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script type="text/javascript" src="./path.js"></script>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
@@ -178,15 +179,6 @@
 				<img src="images/nav_li_31.png" />
 			</div>
 			<div class="contain_box">
-
-				<a href="shoppingInfo2.html">
-					<div>
-						<img src="images/fill in on order (3)_1.png" />
-					</div>
-					<p>oppo 89s Plus 64G内存版</p>
-					<p>全网通4G手机 双卡双待</p>
-				</a>
-
 			
 			</div>
 		</div>
@@ -196,6 +188,11 @@
 		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
 <script>
 	$(function(){
+		var now=0;
+		
+	
+
+
 		//获取url地址上的参数
 	   	 var $_GET = (function(){
 		    var url = window.document.location.href.toString();
@@ -212,28 +209,31 @@
 		        return {};
 		    }
 		})();
-
-		//获取初始商品信息
-		$(document).ready(function() { 
-      
-		  // 任何需要执行的js特效 
-		  $.get("http://localhost/php/api_a/thinkphp_5.0.10_full/public/index.php/index/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":158,"state":"3","limit":"14"},function(data){
+        
+        function add_goods(){
+			  // 任何需要执行的js特效 
+		  $.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":158,"state":"3","limit":"10","reset":now*10},function(data){
                  if(data.status==0)
                  {
                  	 var str="";
                      $.each(data.data,function(k,v){
                        str+='<a href="shoppingInfo2.html"><div><img src="'+v.img+'" /></div><p>'+v.name+'</p><p>'+v.search_words+'</p></a>' 
                      })
-                     $(".contain_box").html(str)
+                     //alert(str)
+                     $(".contain_box").append(str)
                  }
                  else
                  {
                  	alert("系统加载中，请稍候")
                  }              
-	      },"jsonp")
-
+	      },"jsonp")	
+		}
+		//获取初始商品信息
+		$(document).ready(function() { 
+          //第一次展示
+          add_goods();
           //导航展示
-          $.get("http://localhost/php/api_a/thinkphp_5.0.10_full/public/index.php/index/sel/sel",{"access_token":"84d2acebe4a6","id":"158"},function(data){
+          $.get("http://"+saver_path+"comm/sel/sel",{"access_token":"84d2acebe4a6","id":"158"},function(data){
           // alert(data)
           var str=" ";
           $.each(data.data,function(k,v){
@@ -253,6 +253,17 @@
 	   },"jsonp")
 		
 	    })
+    //向下滑动展示商品
+    $(window).scroll(function() {  
+
+        var scrollTop = $(this).scrollTop(),scrollHeight = $(document).height(),windowHeight = $(this).height();  
+            var positionValue = (scrollTop + windowHeight) - scrollHeight; 
+            //console.log(positionValue) 
+         if (positionValue >=0) {  
+         	 now++;
+             add_goods();
+          }  
+    }); 
 
 	 })
 </script>
