@@ -150,7 +150,7 @@
 				position: relative;
 			}
 			#main{
-				position: absolute;
+				position: fixed;
 				bottom: 0px;
 				height: 0;
 				z-index: 100;
@@ -241,6 +241,15 @@
 				box-sizing: border-box;
 				line-height: 50px;
 			}
+			.img{
+				border-top: 18px solid #f1f2f6;
+				width: 100%;
+				margin-bottom: 63px;
+			}
+			.img img{
+				float: left;
+				width: 100%;
+			}
 		</style>
 	</head>
 	<body>
@@ -271,7 +280,12 @@
 			</div>
 			<a id="Animation"><div class="price" style="margin-top: 10px; margin-bottom: 65px;">
 				<p style="color: #666666;">请选择商品规格及数量<span><img src="images/right.png"/></span></p>
-			</div></a>
+			</div>
+		          </a>
+		          	<div class="img">
+		          			
+		          	</div>
+
 			<div class="footer">
 				<a href="#" id="love"><span style="width: 20%;"><img id="like" src="images/like.gif"/><br />收藏</span></a><a href="shoppingcars.html"><span style="width: 20%;"><img src="images/shoppingCar.gif" style="margin-top:8px;"/><br />购物车</span></a>
 				<span style="background: #fd9a35; line-height: 60px; width: 30%; border: none;"><a href="#">加入购物车</a></span>
@@ -314,10 +328,13 @@
 					<div id="footer1" products_id="">
 						<a id="toshop">加入购物车</a><a id="ofcouse">确认</a>
 					</div>
+
 				</div>
 			</div>
 		</div>
-	</body>
+
+		
+	</body>	
 	<script type="text/javascript">
 		var main=document.getElementById("main");
 		var Animation=document.getElementById("Animation");
@@ -557,7 +574,7 @@
 		 		type:"get",
 		 		data:{
 		 			"access_token":"84d2acebe4a6",
-		 			"goods_id":"8174",
+		 			"goods_id":"8180",
 		 		},
 		 		dataType:"jsonp",
 		 		success:function(data){
@@ -613,6 +630,7 @@
 							})
 							 str+='</p>'
 						})
+						$(".img").html(data.data.content)
 						$(".con").html(str)	
 					}
 					else
@@ -622,10 +640,6 @@
 					}
 				 }
 			})
-
-
-
-
 
 		})
 	</script>
