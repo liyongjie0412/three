@@ -306,7 +306,7 @@
 		  // 任何需要执行的js特效 
 
 		  //左侧导航栏
-		  $.get("http://"+saver_path+"comm/sel/sel",{"access_token":"84d2acebe4a6","id":all_category_id},function(data){
+		  $.get("http://"+sever_path+"comm/sel/sel",{"access_token":"84d2acebe4a6","id":all_category_id},function(data){
                 
                     if(data.status==0)
                  {
@@ -332,7 +332,7 @@
 		  //展示全部
 		  add_show('img_show_all',"");
 		  function add_show(classname,state){
-			  	$.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":all_category_id,"state":state,"limit":"1"},function(data){
+			  	$.get("http://"+sever_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":all_category_id,"state":state,"limit":"1"},function(data){
 	                 if(data.status==0)
 	                 {
 	                     $.each(data.data,function(k,v){
@@ -399,7 +399,7 @@
 		  //展示商品方法
 		  function addgoods(state,goods_state,category_id,now=0,append=0)
 		  {
-		  $.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":state,"limit":"14"},function(data){
+		  $.get("http://"+sever_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":state,"limit":"14"},function(data){
                  if(data.status==0)
                  {
                  	 var left_str="";

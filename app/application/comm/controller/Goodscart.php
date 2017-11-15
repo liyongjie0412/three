@@ -10,28 +10,86 @@ use think\Api;
 use think\Db;
 class Goodscart
 {
+    //定义错误码
+    public $errordata=[
+                 0=>"成功",
+                 1000=>"access_token错误",
+                 2000=>"参数错误",
+                 3000=>"非法请求",
+                 4000=>"其他错误"
+                 ];
+    //存储jsonpcallback
+    public $callback;
+    
+    public function __construct(){
+        $callback=input("get.callback");
+       // var_dump($callback);die;
+        if(empty($callback))
+        {
+            $this->errorMsg(3000);
+        }
+        $this->callback=$callback;
+        //var_dump($access_token);die;
+        $access_token=input("get.access_token");
+        if($access_token!="84d2acebe4a6")
+        {
+           $this->errorMsg(1000);
+        }
+    }
     /**
      * [goodscart description]
      * @param $cartstr   字符串
      * @param $id         用户id
      * @return [type] [description]
      */
-    public function goodscart($id="372")
+    public function goodscart($id="372",$content="")
     { 
-      $cartValue=json_decode(str_replace(array('&','$'),array('"',','),''),true);
-      $cartValue=Array ('goods'=> Array ( ),'product' => Array ('852' => 76,'351' => 1) ) ;
-//      print_r($cartValue);die;
-        print_r($buyInfo=$this->cartFormat($cartValue,$id));die;
-//       print_r($this->goodsCount($buyInfo));die;
-
+      $cartValue=json_decode(str_replace(array('&','$'),array('"',','),$content),true);
+      // $cartValue=Array ('goods'=> Array ( ),'product' => Array ('852' => 76,'351' => 1) ) ;
+      // print_r($cartValue);die;
+      $buyInfo=$this->cartFormat($cartValue,$id);
+          // print_r($buyInfo);die;
+      $this->errorMsg(0,$buyInfo);
     }
-
+    public function num($id="372",$count,$pro_id,$content=""){
+      // echo $count;die;
+   $cartValue=json_decode(str_replace(array('&','$'),array('"',','),$content),true);
+      foreach ($cartValue['product'] as $k => $v) {
+         if($k==$pro_id){
+          $cartValue['product'][$k]=$v+$count;
+         }else{
+          $cartValue['product'][$pro_id]=$count;
+         }
+      }
+      $buyInfo=$this->cartFormat($cartValue,$id);
+      $buyInfo['jsonstr']=str_replace(array('"',','),array('&','$'),json_encode($cartValue));
+      $this->errorMsg(0,$buyInfo);
+    }
+  /**
+   * [errorMsg description]
+   * @param  [type] $status [description]
+   * @param  string $data   [description]
+   * @return [type]         [description]
+   */
+    public function errorMsg($status,$data=""){
+      $errordata=array(
+            "status"=>$status,
+            "message"=>$this->errordata[$status],
+        );
+      if($status==0&&!empty($data))
+      {
+        $errordata['data']=$data;
+      }
+      $errordata=json_encode($errordata,JSON_UNESCAPED_UNICODE);
+      //var_dump($errordata);die;
+      echo $this->callback."(".$errordata.")"; die;
+    }
     /**
      * @param $cartValue
      * @param $id
      * @return array
      */
-        public function cartFormat($cartValue,$id)
+        public function cartFormat($cartValue,$id="")
     {
          $cartExeStruct = array('goods' => array('id' => array(), 'data' => array() ),'product' => array( 'id' => array() , 'data' => array()),'count' => 0,'sum' => 0);
         $result = $cartExeStruct;
@@ -198,21 +256,21 @@ return array(
     {
         // echo $id;die
         // 1,根据用户id查出用户VIP等级;
-        $user=DB::name("member")->where("user_id=".$id)->find();
-        $pr="";
-        if($user['level_id']!=0){
-        // 2，查出vip返利比率
-        $fanli=DB::name("rebate")->where("vip_or_seller=2")->select();
-        // 3,根据会员折扣率计算商品返利
-        foreach ($fanli as $key => $value) {
-            // echo $fanli[$key]['vip_or_seller'];
-            if($value['pebate_lv']==$user['level_id']){
-              $pr=$price*$value['rebate']/100;
-                continue;
-            }
-        }
-        }
-        return $pr;
+        // $user=DB::name("member")->where("user_id=".$id)->find();
+        // $pr="";
+        // if($user['level_id']!=0){
+        // // 2，查出vip返利比率
+        // $fanli=DB::name("rebate")->where("vip_or_seller=2")->select();
+        // // 3,根据会员折扣率计算商品返利
+        // foreach ($fanli as $key => $value) {
+        //     // echo $fanli[$key]['vip_or_seller'];
+        //     if($value['pebate_lv']==$user['level_id']){
+        //       $pr=$price*$value['rebate']/100;
+        //         continue;
+        //     }
+        // }
+        // }
+        return 0;
     }
 
 }

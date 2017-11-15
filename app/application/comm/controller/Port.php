@@ -17,7 +17,7 @@ class Port
      */
     public function __construct()
     {
-     $this->access();
+     // $this->access();
     }
 
     /**
@@ -46,11 +46,8 @@ class Port
     public function index(){
         @$call=$_GET['callback'];
         @$location=$_GET['location'];
-        if($location =="index"){
-            $rest = Db::query("select name,link,content from shop_ad_manage where location =0 limit 3");
-        }else{
-            $rest = Db::query("select name,link,content from shop_ad_manage where location !=0 limit 3");
-        }
+            $rest = Db::query("select m.name,p.name pname,link,content from shop_ad_manage as m join shop_ad_position as p  on p.id=m.position_id where `status`= 1 and p.`name`='".$location."'");
+
         if($rest){
             $con =json_encode(['status'=>0,'message'=>'请求成功','data'=>$rest],JSON_UNESCAPED_UNICODE);
         }else{

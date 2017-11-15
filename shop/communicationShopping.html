@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<script type="text/javascript" src="./path.js"></script>
+		<script type="text/javascript" src="path.js"></script>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
@@ -209,8 +209,10 @@
         {
         	category_id=158;
         }
+        alert(category_id)
+        alert(sever_path)
         //展示横幅
-        $.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":"3","limit":"1"},function(data){
+        $.get("http://"+sever_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":"3","limit":"1"},function(data){
                  if(data.status==0)
                  {
                  	 
@@ -228,7 +230,7 @@
         //alert(category_id)
         function add_goods(){
 			  // 任何需要执行的js特效 
-		  $.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":"3","limit":"10","reset":now*10},function(data){
+		  $.get("http://"+sever_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":"3","limit":"10","reset":now*10},function(data){
                  if(data.status==0)
                  {
                  	 var str="";
@@ -249,7 +251,7 @@
           //第一次展示
           add_goods();
           //导航展示
-          $.get("http://"+saver_path+"comm/sel/sel",{"access_token":"84d2acebe4a6","id":category_id},function(data){
+          $.get("http://"+sever_path+"comm/sel/sel",{"access_token":"84d2acebe4a6","id":category_id},function(data){
           // alert(data)
           var str=" ";
           $.each(data.data,function(k,v){
