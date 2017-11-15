@@ -1,0 +1,1 @@
+var sever_path="localhost/htdocs/app/public/index.php/"
