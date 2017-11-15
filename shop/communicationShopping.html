@@ -97,7 +97,7 @@
 				margin-left: 5%;
 				width: 50%;
 				text-align: center;
-				font-size: 1.2rem;
+				font-size: 0.9rem;
 			}
 			.contain_box{
 				width: 100%;
@@ -173,10 +173,7 @@
 		</div>
 		<div class="contain">
 			<div class="img_show">
-				<h3>热销产品</h3>
-				<p>VIVO Xplay6</p>
-				<p>曲屏:双摄柔光更美</p>
-				<img src="images/nav_li_31.png" />
+		
 			</div>
 			<div class="contain_box">
 			
@@ -190,9 +187,6 @@
 	$(function(){
 		var now=0;
 		
-	
-
-
 		//获取url地址上的参数
 	   	 var $_GET = (function(){
 		    var url = window.document.location.href.toString();
@@ -209,15 +203,37 @@
 		        return {};
 		    }
 		})();
-        
+
+        var category_id=$_GET['category_id'];
+        if(category_id==undefined)
+        {
+        	category_id=158;
+        }
+        //展示横幅
+        $.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":"3","limit":"1"},function(data){
+                 if(data.status==0)
+                 {
+                 	 
+                     $.each(data.data,function(k,v){
+                       str='<a href="shoppingInfo.html?goods_id='+v.id+'"><h3>热销产品</h3><p>'+v.name+'</p><p>'+v.search_words+'</p><img width="49px;" height="102px;" src="'+v.img+'" /></a>' 
+                     })
+                     //alert(str)
+                     $(".img_show").append(str)
+                 }
+                 else
+                 {
+                 	alert("系统加载中，请稍候")
+                 }              
+	      },"jsonp")
+        //alert(category_id)
         function add_goods(){
 			  // 任何需要执行的js特效 
-		  $.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":158,"state":"3","limit":"10","reset":now*10},function(data){
+		  $.get("http://"+saver_path+"comm/Goodslist/goodslistcategory",{"access_token":"84d2acebe4a6","category_id":category_id,"state":"3","limit":"10","reset":now*10},function(data){
                  if(data.status==0)
                  {
                  	 var str="";
                      $.each(data.data,function(k,v){
-                       str+='<a href="shoppingInfo2.html"><div><img src="'+v.img+'" /></div><p>'+v.name+'</p><p>'+v.search_words+'</p></a>' 
+                       str+='<a href="shoppingInfo.html?goods_id='+v.id+'"><div><img src="'+v.img+'" /></div><p>'+v.name+'</p><p>'+v.search_words+'</p></a>' 
                      })
                      //alert(str)
                      $(".contain_box").append(str)
@@ -233,14 +249,18 @@
           //第一次展示
           add_goods();
           //导航展示
-          $.get("http://"+saver_path+"comm/sel/sel",{"access_token":"84d2acebe4a6","id":"158"},function(data){
+          $.get("http://"+saver_path+"comm/sel/sel",{"access_token":"84d2acebe4a6","id":category_id},function(data){
           // alert(data)
           var str=" ";
           $.each(data.data,function(k,v){
           	// alert(v.images[0])
-          	if(v.id=='160' || v.id=='199' )
+          	if(v.name=='手机' || v.name=='小天才智能手表' )
           	{
           		str+='<a href="newPhone.html?brand_id='+v.id+'"><div><img src="./images/'+v.images+'" /><p>'+v.name+'</p></div></a>';
+          	}
+          	else if(v.name=='号卡/套餐')
+          	{
+          		str+='<a href="cardNumber.html"><div><img src="./images/'+v.images+'" /><p>'+v.name+'</p></div></a>';
           	}
           	else
           	{
