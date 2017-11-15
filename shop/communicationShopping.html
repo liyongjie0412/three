@@ -263,7 +263,28 @@
          	 now++;
              add_goods();
           }  
-    }); 
+    });
+
+		// 轮播
+		$(document).ready(function(){
+					var a = location.href;
+					var b = a.split("/");
+					var c = b.slice(b.length-1, b.length).toString(String).split(".");
+					var file=c.slice(0,1);
+					$.ajax({
+						url:"http://"+sever_path+"comm/port/index",
+						type:"get",
+						data:{access_token:"84d2acebe4a6", location:file},
+						dataType:"jsonp",
+						success:function(msg){
+							var str="";
+							$.each(msg.data,function(k,v){
+								$(".swiper-wrapper").find("div").eq(k).find("img").attr("src","http://localhost/htdocs/shop/alidata/www/default/pp/"+ v.content)
+								$(".swiper-wrapper").find("div").eq(k+msg.data.length).find("img").attr("src", "http://localhost/htdocs/shop/alidata/www/default/pp/"+v.content)
+							})
+						}
+					})
+				})
 
 	 })
 </script>
