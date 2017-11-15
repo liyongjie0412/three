@@ -7,8 +7,13 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Document</title>
 	<style type="text/css">
-		*{margin: 0; padding: 0;}
+		*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
 		a{
+			color: black;
 			-webkit-tap-highlight-color: white;
 			text-decoration: none;
 		}
@@ -182,6 +187,33 @@
 			.font_color_red{
 				color:#F59626;
 			}
+
+
+			.img_show{
+				padding: 1rem 0 ;
+				margin: 0;
+				width: 100%;
+				background: white;
+				position: relative;
+				margin-bottom: 0.25rem;
+			}
+			.img_show img{
+				position: absolute;
+				right: 5%;
+				bottom: 5px;
+			}
+			.img_show h3{
+				font-size: 1.5rem;
+				font-weight: normal;
+				text-align: center;
+				margin-bottom: 0.5rem;
+			}
+			.img_show p{
+				margin-left: 5%;
+				width: 50%;
+				text-align: center;
+				font-size: 0.9rem;
+			}
 	</style>
 </head>
 <body>
@@ -195,8 +227,8 @@
 		<div id="hot_new">
 		<div class="show">
 			<div class="show_text">→<span>新品上市</span>←</div>
-			<div class="show_img">
-				<img src="images/list (9).png" />
+			<div class="img_show img_show_new">
+		    
 			</div>
 		</div>
 		<div class="contain contain_footer" id="goods_new">
@@ -208,8 +240,8 @@
 		
 		<div class="show">
 			<div class="show_text">→<span>热销产品</span>←</div>
-			<div class="show_img_lunbo">
-				<img src="images/new-built (2).png" />
+			<div class="img_show img_show_hot">
+		    
 			</div>
 		</div>
 		<div class="contain contain_footer" id="goods_hot">
@@ -221,8 +253,8 @@
 		</div>
 		<div class="show">
 			<div class="show_text">→<span>全部产品</span>←</div>
-			<div class="show_img_lunbo">
-				<img src="images/new-built (2).png" />
+			<div class="img_show img_show_all">
+		     <h3></h3>
 			</div>
 		</div>
 		<div class="contain contain_footer" id="goods_brand_all">
@@ -291,7 +323,7 @@
 		  // 任何需要执行的js特效 
            
 		  //左侧导航栏
-		  $.get("http://"+saver_path+"comm/brand/brand",{"access_token":"84d2acebe4a6","id":all_brand_id},function(data){
+		  $.get("http://"+sever_path+"comm/brand/brand",{"access_token":"84d2acebe4a6","id":all_brand_id},function(data){
                 //alert(data.status);
                     if(data.status==0)
                  {
@@ -308,6 +340,30 @@
                   }
 
                 },"jsonp")
+		  //展示横幅
+		  //展示热销
+		  add_show('img_show_new',3);
+		  //展示新品
+		  add_show('img_show_hot',1);
+		  //展示全部
+		  add_show('img_show_all',"");
+		  function add_show(classname,state){
+			  	$.get("http://"+sever_path+"comm/Goodslist/goodslistbrand",{"access_token":"84d2acebe4a6","brand_id":all_brand_id,"state":state,"limit":"1"},function(data){
+	                 if(data.status==0)
+	                 {
+	                     $.each(data.data,function(k,v){
+	                       str='<a href="shoppingInfo.html?goods_id='+v.id+'"><p>'+v.name+'</p><p>'+v.search_words+'</p><img width="100px;" height="65px;" src="'+v.img+'" /></a>' 
+	                     })
+	                     //alert(str)
+	                     $("."+classname).append(str)
+	                 }
+	                 else
+	                 {
+	                 	alert("系统加载中，请稍候")
+	                 }              
+		      },"jsonp")
+		  }
+        
 
 		  //点击换品牌
 		  $(document).on("click",".brand_click",function(){
@@ -361,7 +417,7 @@
 		  function addgoods(state,goods_state,brand_id,now=0,append=0)
 		  {
 
-		  $.get("http://"+saver_path+"comm/Goodslist/goodslistbrand",{"access_token":"84d2acebe4a6","brand_id":brand_id,"state":state,"limit":"10","reset":now*10},function(data){
+		  $.get("http://"+sever_path+"comm/Goodslist/goodslistbrand",{"access_token":"84d2acebe4a6","brand_id":brand_id,"state":state,"limit":"10","reset":now*10},function(data){
                  if(data.status==0)
                  {
                  	 var left_str="";

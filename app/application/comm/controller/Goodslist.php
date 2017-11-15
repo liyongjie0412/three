@@ -51,22 +51,34 @@ class Goodslist
     public function goodslistcategory(){
 
         $category_id=input("get.category_id","");
+<<<<<<< HEAD
+        $limit=input("get.limit",10);
+        $reset=input("get.reset",0);
+        //var_dump($categroy_id);die;
+=======
          $limit=input("get.limit",6);
         // var_dump($limit);die;
+>>>>>>> d3ea5e6d0db5715df891c12dabb3b5eec401f3cd
         $state=input("get.state","");
          if(empty($category_id))
          {
             $this->errorMsg(2000); 
          }
          $category_id=$this->catChild($category_id);
+         //var_dump($state);die;
         if(empty($state))
          {
 
              $all_data=DB::name("category_extend as ca")
              ->join("shop_goods go","go.id = ca.goods_id")
              ->where("ca.category_id in ($category_id) and go.is_del = 0")
+<<<<<<< HEAD
+             ->field("go.img,go.sell_price,go.name,go.id,go.market_price,go.search_words")
+             ->limit($reset,$limit)
+=======
              ->field("go.img,go.sell_price,go.name,go.id,go.market_price,go.search_words,go.sort")
              ->limit($limit)
+>>>>>>> d3ea5e6d0db5715df891c12dabb3b5eec401f3cd
              ->order("go.sort asc,go.id desc")->select();
          }
          else
@@ -77,17 +89,25 @@ class Goodslist
              ->join("shop_commend_goods co","co.goods_id = go.id")
              ->where("ca.category_id in ($category_id) and co.commend_id = $state and go.is_del = 0 and go.store_nums>0") 
              ->field("DISTINCT go.id,go.img,go.sell_price,go.name,go.market_price,go.description,go.search_words,go.sort")
+<<<<<<< HEAD
+             ->limit($reset,$limit)
+             ->order("go.sort asc,go.id desc")->select();
+              //var_dump($all_data);die; 
+=======
              ->order(['go.sort'=>'asc',"go.id"=>"desc"])
              ->limit($limit)->select();
        
+>>>>>>> d3ea5e6d0db5715df891c12dabb3b5eec401f3cd
         }
-            // var_dump($all_data);die; 
+           
         $this->errorMsg(0,$all_data);
     }
     
     //根据品牌获取推荐商品列表1:最新商品 2:特价商品 3:热卖排行 4:推荐商品
     public function goodslistbrand(){
         $brand_id=input("get.brand_id","");
+        $reset=input("get.reset",0);
+        $limit=input("get.limit",10);
        // var_dump($brand_id);die;
         $state=input("get.state","");
         
@@ -101,7 +121,8 @@ class Goodslist
         // var_dump($brand_id);die;
          if(empty($state))
          {
-            $all_data=DB::name("goods")->where("brand_id= in ($brand_id)")->select();
+            $all_data=DB::name("goods")->where("brand_id in ($brand_id)")->limit($reset,$limit)->select();
+            //var_dump($all_data);die;
          }
          else
          {
@@ -109,7 +130,7 @@ class Goodslist
              ->join("shop_goods go","co.goods_id = go.id")
              ->where("co.commend_id = $state and go.is_del = 0 AND go.id is not null and go.brand_id in ($brand_id)")
              ->field("go.img,go.sell_price,go.name,go.id,go.search_words,go.market_price")
-             ->limit("10")
+             ->limit($reset,$limit)
              ->order("sort asc,id desc")->select();
          }
          // var_dump($all_data);die; 
