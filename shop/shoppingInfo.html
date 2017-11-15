@@ -288,7 +288,7 @@
 
 			<div class="footer">
 				<a href="#" id="love"><span style="width: 20%;"><img id="like" src="images/like.gif"/><br />收藏</span></a><a href="shoppingcars.html"><span style="width: 20%;"><img src="images/shoppingCar.gif" style="margin-top:8px;"/><br />购物车</span></a>
-				<span style="background: #fd9a35; line-height: 60px; width: 30%; border: none;"><a href="#">加入购物车</a></span>
+				<span style="background: #fd9a35; line-height: 60px; width: 30%; border: none;"><a href="javascript:void(0)" class="cart">加入购物车</a></span>
 				<span style="background: #ff6801; line-height: 60px; width: 30%; border: none; "><a href="FillInAnOrder.html">立即购买</a></span>
 			</div>
 			
@@ -335,7 +335,23 @@
 
 		
 	</body>	
+	<script src="./path.js"></script>
 	<script type="text/javascript">
+	 var $_GET = (function(){
+		    var url = window.document.location.href.toString();
+		    var u = url.split("?");
+		    if(typeof(u[1]) == "string"){
+		        u = u[1].split("&");
+		        var get = {};
+		        for(var i in u){
+		            var j = u[i].split("=");
+		            get[j[0]] = j[1];
+		        }
+		        return get;
+		    } else {
+		        return {};
+		    }
+		})();
 		var main=document.getElementById("main");
 		var Animation=document.getElementById("Animation");
 		Animation.onclick=function(){
@@ -483,7 +499,29 @@
 					$('#input').val(num)
 
 				})
-
+                $(".cart").click(function(){
+                	var type=""
+					var classify=$(".classify").length
+					if($(".type").length==0)
+					{
+						alert("请先选择产品规格")
+						return false;
+					}
+					if($(".type").length<classify)
+					{
+						alert("请先选择产品规格")
+						return false;
+					}
+					//数量
+					var num=$('#input').val()
+					if(num==0)
+					{
+						alert("请先规定货品数量")
+						return false;
+					}
+					var products_id=$('#footer1').attr("products_id")
+					car(products_id,num)
+                })
 				//提交购物车
 				$("#toshop").click(function(){
 
@@ -509,11 +547,20 @@
 
 					//货品id
 					var products_id=$('#footer1').attr("products_id")
-					console.log(num)
-					console.log(products_id)
+					car(products_id,num)
 
 				})
-
+				// 加入购物车
+				function car(products_id,num){
+                    var content=localStorage.getItem("goodscart");
+		         $.get("http://"+sever_path+"comm/goodscart/num",{"access_token":"84d2acebe4a6","count":num,"pro_id":products_id,"content":content},function(data){
+		         	if(data.status==0){
+		         	localStorage.setItem("goodscart",data.data.jsonstr);
+		         	alert("加入购物车成功")
+		         	}
+		         	
+		         },"jsonp")
+				}
 
 				
 
@@ -542,7 +589,7 @@
 						//商品id
 						var goods_id=$(".goods").attr("goods_id");
 						$.ajax({
-					 		url:"http://127.0.0.1/Big_training/commune/appshop/public/index.php/index/index/get_products",
+					 		url:"http://"+sever_path+"comm/index/get_products",
 					 		type:"get",
 					 		data:{
 					 			"access_token":"84d2acebe4a6",
@@ -568,13 +615,14 @@
 			})
 				
 
+			var goods_id=$_GET['goods_id'];
 			//jsonp 获取商品信息	
 			$.ajax({
-		 		url:"http://127.0.0.1/Big_training/commune/appshop/public/index.php/index/index/get_goods",
+		 		url:"http://"+sever_path+"comm/index/get_goods",
 		 		type:"get",
 		 		data:{
 		 			"access_token":"84d2acebe4a6",
-		 			"goods_id":"8180",
+		 			"goods_id":goods_id,
 		 		},
 		 		dataType:"jsonp",
 		 		success:function(data){

@@ -1,3 +1,4 @@
+<script src="./path.js"></script>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -237,13 +238,13 @@
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<img src="images/images/new-built.png" />
+						<img src="images/images/n1.png" />
 					</div>
 					<div class="swiper-slide">
-						<img src="images/images/new-built.png" />
+						<img src="images/images/n1.png" />
 					</div>
 					<div class="swiper-slide">
-						<img src="images/images/new-built.png" />
+						<img src="images/images/n1.png" />
 					</div>
 				</div>
 				<div class="swiper-pagination"></div>
@@ -466,21 +467,15 @@
 						var c = b.slice(b.length-1, b.length).toString(String).split(".");
 						var file=c.slice(0,1);
 						$.ajax({
-							url:"http://lf.com/index/port/index",
+							url:"http://"+sever_path+"comm/port/index",
 							type:"get",
 							data:{access_token:"84d2acebe4a6", location:"index"},
 							dataType:"jsonp",
 							success:function(msg){
-//
 								var str="";
 								$.each(msg.data,function(k,v){
-									//alert(v.content)
-                                  $(".swiper-wrapper").find("div").eq(k).find("img").attr("src", v.content)
-								 $(".swiper-wrapper").find("div").eq(k+msg.data.length).find("img").attr("src", v.content)
-									str+='<div class="swiper-slide ">';
-									str+='<img src="'+ v.content+'">';
-									str+='</div>';
-
+                                  $(".swiper-wrapper").find("div").eq(k).find("img").attr("src","http://localhost/htdocs/shop/alidata/www/default/pp/"+ v.content)
+								 $(".swiper-wrapper").find("div").eq(k+msg.data.length).find("img").attr("src", "http://localhost/htdocs/shop/alidata/www/default/pp/"+v.content)
 								})
 							}
 						})
@@ -490,4 +485,5 @@
 			)
 
 		})
+		</script>
 </html>
