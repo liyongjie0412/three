@@ -300,12 +300,7 @@
 				</div>
 			</a>
 			<div class="nav_tz">
-				<img src="images/new-built (7).png">
-				<div>
-					<a href="#" id="ts_scroll" class="scroll">（欢迎关注PP公社商城）</a>
-					<a href="#" class="scroll">（欢迎关注PP公社商城）</a>
-					<a href="#" class="scroll">（欢迎关注PP公社商城）</a>
-				</div>
+			
 				
 			</div>
 		</div>
@@ -485,5 +480,15 @@
 			)
 
 		})
+		$.get("http://localhost/htdocs/dashixun1/tp5ppshop/public/index.php/index/notice/notice",{"access_token":"84d2acebe4a6"},function(data){
+        
+          var str=" ";
+          $.each(data.data,function(k,v){
+          		str+='<div><a href="'+v.url+'" id="ts_scroll" class="scroll">'+v.content+'</a></div>';
+             
+          })
+          //alert(str)
+          $('.nav_tz').find("div").html(str)
+	   },"jsonp")
 		</script>
 </html>
