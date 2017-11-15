@@ -51,8 +51,8 @@ class Goodslist
     public function goodslistcategory(){
 
         $category_id=input("get.category_id","");
-        $limit=input("get.limit",10);
-        //var_dump($categroy_id);die;
+         $limit=input("get.limit",6);
+        // var_dump($limit);die;
         $state=input("get.state","");
          if(empty($category_id))
          {
@@ -61,23 +61,25 @@ class Goodslist
          $category_id=$this->catChild($category_id);
         if(empty($state))
          {
+
              $all_data=DB::name("category_extend as ca")
              ->join("shop_goods go","go.id = ca.goods_id")
              ->where("ca.category_id in ($category_id) and go.is_del = 0")
-             ->field("go.img,go.sell_price,go.name,go.id,go.market_price,go.search_words")
+             ->field("go.img,go.sell_price,go.name,go.id,go.market_price,go.search_words,go.sort")
              ->limit($limit)
              ->order("go.sort asc,go.id desc")->select();
          }
          else
          {
-
+         //echo 1;die;
          $all_data=DB::name("category_extend as ca")
              ->join("shop_goods go","go.id = ca.goods_id")
              ->join("shop_commend_goods co","co.goods_id = go.id")
              ->where("ca.category_id in ($category_id) and co.commend_id = $state and go.is_del = 0 and go.store_nums>0") 
-             ->field("DISTINCT go.id,go.img,go.sell_price,go.name,go.market_price,go.description,go.search_words")
-             ->limit($limit)
-             ->order("go.sort asc,go.id desc")->select();
+             ->field("DISTINCT go.id,go.img,go.sell_price,go.name,go.market_price,go.description,go.search_words,go.sort")
+             ->order(['go.sort'=>'asc',"go.id"=>"desc"])
+             ->limit($limit)->select();
+       
         }
             // var_dump($all_data);die; 
         $this->errorMsg(0,$all_data);
