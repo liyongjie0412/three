@@ -368,17 +368,44 @@
 		retTo.onclick=function(){
 			history.go(-1);
 		}
+
+
+		//收藏   取消收藏
 		var love=document.getElementById("love");
 		var turn=false;
 		var like=document.getElementById("like");
 		love.onclick=function(){
-			if(turn==false){
-				like.src="images/like(2).png";
-				turn=true;
-			}else{
-				like.src="images/like.gif";
-				turn=false;
-			}
+			// if(turn==false){
+			// 	like.src="images/like(2).png";
+			// 	turn=true;
+			// }else{
+			// 	like.src="images/like.gif";
+			// 	turn=false;
+			// }
+
+			$.ajax({
+				type:"get",
+				url:"http://127.0.0.1/Big_training/commune/appshop/public/index.php/index/index/get_favorite",
+				data:{
+					"access_token":"84d2acebe4a6",
+					"goods_id":"8180",
+					"user_id":"265"
+				},
+				dataType:"jsonp",
+				success:function(msg)
+				{
+					if(msg.data==0)
+					{
+						
+						like.src="images/like(2).png";
+					}
+					else if(msg.data==1)
+					{
+						like.src="images/like.gif";
+					}
+
+				}
+			})
 		}
 		
 		var box1=document.getElementById("box1");
@@ -623,6 +650,8 @@
 		 		data:{
 		 			"access_token":"84d2acebe4a6",
 		 			"goods_id":goods_id,
+		 			"user_id":"265"
+
 		 		},
 		 		dataType:"jsonp",
 		 		success:function(data){
@@ -680,6 +709,16 @@
 						})
 						$(".img").html(data.data.content)
 						$(".con").html(str)	
+
+						//是否收藏
+						if(data.data.favorite==0)
+						{
+							$("#like").attr("src","images/like(2).png")
+						}
+						else
+						{
+							$("#like").attr("src","images/like.gif")
+						}
 					}
 					else
 					{
