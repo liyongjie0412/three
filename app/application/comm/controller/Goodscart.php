@@ -52,10 +52,11 @@ class Goodscart
       $this->errorMsg(0,$buyInfo);
     }
     public function num($id="372",$count,$pro_id,$content=""){
+      // echo $count;die;
    $cartValue=json_decode(str_replace(array('&','$'),array('"',','),$content),true);
       foreach ($cartValue['product'] as $k => $v) {
          if($k==$pro_id){
-          $cartValue['product'][$k]=$count;
+          $cartValue['product'][$k]=$v+$count;
          }else{
           $cartValue['product'][$pro_id]=$count;
          }
